@@ -1,5 +1,5 @@
 #Repo Jmthon Clone
-RUN git clone https://github.com/MACS-AR/MACS.git /root/userbot
+RUN git clone https://github.com/MACS-AR/MACS-TM.git /root/userbot
 
 #working directory 
 WORKDIR /root/userbot
