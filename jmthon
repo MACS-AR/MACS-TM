@@ -5,59 +5,6 @@ _get_repolink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "Jmthon-iq" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL01BQ1MtQVIvTUFDUy9hcmNoaXZlL3JlZnMvaGVhZHMvbWFpbi56aXA=" | base64 -d
-    elif [[ $UPSTREAM_REPO == "Jmthon-iq" ]]
-    then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL01BQ1MtQVIvTUFDUy9hcmNoaXZlL3JlZnMvaGVhZHMvbWFpbi56aXA=" | base64 -d
-    elif [[ $UPSTREAM_REPO =~ $regex ]]
-    then
-        if [[ $UPSTREAM_REPO_BRANCH ]]
-        then
-            echo "${UPSTREAM_REPO}/archive/${UPSTREAM_REPO_BRANCH}.zip"
-        else
-            echo "${UPSTREAM_REPO}/archive/refs/heads/main.zip"
-        fi
-    else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL01BQ1MtQVIvTUFDUy9hcmNoaXZlL3JlZnMvaGVhZHMvbWFpbi56aXA=" | base64 -d
-    fi
-}
-
-
-_setting_bot () {
-    local zippath
-    zippath="MACS-main.zip"
-    echo "  يتم تحميل ملفات سورس ماكس ..."
-    wget -q $(_get_repolink) -O "$zippath"
-    echo "  فك بيانات السورس ..."
-    JMTHONPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
-    unzip -qq "$zippath"
-    echo "✓"
-    echo "  يتم التفريغ.."
-    rm -rf "$zippath"
-    sleep 5
-    cd $JMTHONPATH
-    echo "    بدء بوت ماكس    "
-    echo "
-                       
-╋╋╋╋╋┏┓┏┓
-╋┏┳━━┫┗┫┗┳━┳━┳┓
-╋┣┫┃┃┃┏┫┃┃╋┃┃┃┃
-┏┛┣┻┻┻━┻┻┻━┻┻━
-┗━┛
-
-    "
-
-    python3 ../setup/updater.py ../requirements.txt requirements.txt
-    python3 -m userbot
-}
-
-_setting_bo
-
-_get_repolink () {
-    local regex
-    regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "Jmthon-iq" ]]
-    then
         echo "aHR0cHM6Ly9naXRodWIuY29tL01BQ1MtQVIvTUFDUy9hcmNoaXZlL21hc3Rlci56aQ==" | base64 -d
     elif [[ $UPSTREAM_REPO == "Jmthon-iq" ]]
     then
