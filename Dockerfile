@@ -1,8 +1,8 @@
 #Repo Jmthon Clone
-RUN git clone https://github.com/MACS-AR/MACS-TM.git /root/userbot
+RUN git clone https://github.com/MACS-AR/MACS.git /tree/master/userbot
 
 #working directory 
-WORKDIR /root/userbot
+WORKDIR /tree/master/userbot
 
 # Install requirements
 RUN pip3 install -U -r requirements.txt
