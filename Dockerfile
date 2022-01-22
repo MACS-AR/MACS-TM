@@ -1,4 +1,4 @@
-FROM MACS-AR/MACS:alpine
+FROM JMTHON-AR/JM-THON:alpine
 
 #clonning repo 
 RUN git clone https://github.com/MACS-AR/MACS.git /root/userbot
